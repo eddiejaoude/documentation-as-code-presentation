@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<section>
+						<h2>Documentation === Code</h2>
+					</section>
+					<section>
+						<h2>About Me</h2>
+						<h4>Eddie Jaoude</h4>
+						<p>Passionate for #opensource #remote #inclusion</p>
+						<ul>
+							<li>youtube.com/eddiejaoude</li>
+							<li>github.com/eddiejaoude</li>
+							<li>twitter.com/eddiejaoude</li>
+							<li>instagram.com/eddiejaoude</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Overview</h2>
+						<ul>
+							<li>Why is documentation forgotten</li>
+							<li>Documentation should be treated like code</li>
+							<li>Tools that can help us like Asciidocs & AsciiDoctor</li>
+							<li>Example project</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Questions / Translations</h2>
+						<p>Pleae ask as we go along</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Problem</h2>
+					</section>
+					<section>
+						Why is documentation forgotten about?
+						<aside class="notes">
+							<p>we are Agile we dont need docs</p>
+							<p>when I get time</p>
+							<p>they will be out of date soon</p>
+						</aside>
+					</section>
+					<section>Sounds just like <b>automated testing</b> 10 years ago</section>
+					<section>
+						But we are <b>Agile</b>?
+						<aside class="notes">
+							<p>I hear this a lot when people dont want to do something</p>
+							<p>no excuse</p>
+						</aside>
+					</section>
+					<section>
+						Just enough
+						<aside class="notes">
+							<p>just enough tests to satisfy the story</p>
+							<p>just enough code to pass the tests</p>
+							<p>why not just enough documentation</p>
+						</aside>
+					</section>
+					<section>
+						<pre><code data-trim data-noescape>
+						c = a + b // b is added to a
+						</code></pre>
+					</section>
+					<section>
+						Whats worse than no documentation?
+						<aside class="notes">
+							<p>out of date documentation</p>
+						</aside>
+					</section>
+					<section>
+						Out of date documentation
+						<aside class="notes">
+							<p>when a variable is called string but then the code is rewritten for it to be a number but the name didnt change</p>
+						</aside>
+					</section>
+					<section>
+						Binaries (images / diagrams)
+						<aside class="notes">
+							<p>are great</p>
+							<p>but also the worst</p>
+							<p>dont have the original or application</p>
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Solution</h2>
+					</section>
+					<section>
+						How can we solve this?
+						<aside class="notes">
+							<p>similar to automated testing</p>
+							<p>part of PR</p>
+							<p>docs first</p>
+						</aside>
+					</section>
+					<section><b>TDD</b> became popular</section>
+					<section>
+						Why not <b>DocDD</b>?
+						<aside class="notes">
+							<p>why not DDD?</p>
+							<p>not to be confused with Domain Driven Development</p>
+						</aside>
+					</section>
+					<section>Treat docs as code</section>
+					<section>
+						Markdown / Asciidocs
+						<aside class="notes">
+							<p>docs directory</p>
+							<p>markdown is simpler but limited</p>
+							<p>asciidocs has a lot more features</p>
+							<p>includes, table of contents generation, diagrams</p>
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section>Examples</section>
+					<section>
+						<pre><code data-trim data-noescape>
+							| Tables        | Are           | Cool  |
+							| ------------- |:-------------:| -----:|
+							| col 3 is      | right-aligned | $1600 |
+							| col 2 is      | centered      |   $12 |
+							| zebra stripes | are neat      |    $1 |
+						</code></pre>
+					</section>
+					<section>
+						<pre><code data-trim data-noescape>
+							.Table Title
+							|===
+							|Name of Column 1 |Name of Column 2 |Name of Column 3
+
+							|Cell in column 1, row 1
+							|Cell in column 2, row 1
+							|Cell in column 3, row 1
+
+							|Cell in column 1, row 2
+							|Cell in column 2, row 2
+							|Cell in column 3, row 2
+							|===
+						</code></pre>
+					</section>
+					<section>
+						Asciidoctor to generate website / pdf etc
+					</section>
+					<section>
+						<img src="img/mermaid.png" />
+					</section>
+					<section>
+						<pre><code data-trim data-noescape>
+							sequenceDiagram
+								participant Alice
+								participant Bob
+								Alice->>John: Hello John, how are you?
+								loop Healthcheck
+									John->>John: Fight against hypochondria
+								end
+								Note right of John: Rational thoughts<br/>prevail...
+								John-->>Alice: Great!
+								John->>Bob: How about you?
+								Bob-->>John: Jolly good!
+						</code></pre>
+					</section>
+					<section>
+						CI, run build, linters, tests, <b>docs</b>, deploy etc
+					</section>
+					<section>Demo</section>
+				</section>
+				<section>
+					<section>
+						<h2>Conclusion</h2>
+					</section>
+					<section>Write just enough docs</section>
+					<section>Treat as code & keep as part of the story / feature</section>
+					<section>No binaries</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
+				parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				parallaxBackgroundSize: '4200px 1800px', // CSS syntax, e.g. "2100px 900px"
+				// Number of pixels to move the parallax background per slide
+				// - Calculated automatically unless specified
+				// - Set to 0 to disable movement along an axis
+				parallaxBackgroundHorizontal: 100,
+				parallaxBackgroundVertical: 100,
+				history: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
